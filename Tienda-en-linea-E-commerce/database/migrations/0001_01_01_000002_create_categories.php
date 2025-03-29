@@ -55,3 +55,12 @@ return new class extends Migration
         Schema::dropIfExists('failed_jobs');
     }
 };
+public function up()
+{
+    Schema::create('categories', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->text('description');
+        $table->timestamps();
+    });
+}
